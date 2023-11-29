@@ -1,0 +1,15 @@
+<div class="container">
+    <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+        <div class="d-grid gap-2">
+            <input class="form-control mt-3 b-none" formControlName="todoText" type="text" placeholder="Add ToDo" aria-label="default input example">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+    <div>{{ todoForm.value.todoText }}</div>
+    <div>
+        <div *ngFor="let todoItem of todoList" class="container mt-5">
+            <div class="todo-card">{{ todoItem.todoText }}</div>
+          
+        </div>
+    </div>
+</div>
